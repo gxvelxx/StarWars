@@ -1,0 +1,8 @@
+C:\Users\태양\Documents\GitHub\StarWars\StarWars\bin\Debug\StarWars.exe.config
+C:\Users\태양\Documents\GitHub\StarWars\StarWars\bin\Debug\StarWars.exe
+C:\Users\태양\Documents\GitHub\StarWars\StarWars\bin\Debug\StarWars.pdb
+C:\Users\태양\Documents\GitHub\StarWars\StarWars\obj\Debug\StarWars.csproj.AssemblyReference.cache
+C:\Users\태양\Documents\GitHub\StarWars\StarWars\obj\Debug\StarWars.csproj.CoreCompileInputs.cache
+C:\Users\태양\Documents\GitHub\StarWars\StarWars\obj\Debug\StarWars.exe
+C:\Users\태양\Documents\GitHub\StarWars\StarWars\obj\Debug\StarWars.pdb
+C:\Users\태양\Documents\GitHub\StarWars\StarWars\obj\Debug\StarWars.exe.config

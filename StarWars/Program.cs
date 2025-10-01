@@ -9,7 +9,8 @@ namespace StarWars
     internal class Program
     {
         static void Main(string[] args)
-        {            
+        {
+            Console.OutputEncoding = Encoding.UTF8; // 특수문자 깨짐 해결
             Console.WriteLine("Star Wars Building");
 
             //게임 시작

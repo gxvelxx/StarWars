@@ -9,16 +9,14 @@ namespace StarWars
     internal class Player
     {
         private string[] _playerFrame;
-        private int _x;
-        private int _y;
+        private Vector _position; // 좌표로 관리하려고 변경
 
         //플레이어 크기
         private const int _playerFrameHeight = 4;
         private const int _playerFrameWidth = 6;
 
-        //플레이어 위치
-        private const int _posX = 0;
-        private const int _posY = 1;
+        //초기 위치
+        private static readonly Vector _initialPosition = new Vector(10, 10);
 
         public Player()
         {
@@ -29,8 +27,8 @@ namespace StarWars
                 "██  ██ ",
                 "▝.██.▘"
             };
-            _x = _posX;
-            _y = _posY;
+
+            _position = _initialPosition;
         }
         
         public void Create()
@@ -47,7 +45,7 @@ namespace StarWars
                         empty = line[j];
                     }
 
-                    Console.SetCursorPosition(_x + j, _y + i);
+                    Console.SetCursorPosition(_position.X + j, _position.Y + i);
                     Console.Write(empty);
                 }
             }

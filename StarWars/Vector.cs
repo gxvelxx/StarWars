@@ -8,13 +8,24 @@ namespace StarWars
 {
     public struct Vector
     {
-        public int X;
-        public int Y;
+        private int _x;
+        private int _y;
+        
+        public int X
+        {
+            get { return _x; }
+            set { _x = value; }
+        }
+        public int Y
+        {
+            get { return _y; }
+            set { _y = value; }
+        }
 
         public Vector(int x, int y)
         {
-            X = x;
-            Y = y;
+            _x = x;
+            _y = y;
         }        
     }
 }

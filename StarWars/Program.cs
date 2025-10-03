@@ -10,6 +10,7 @@ namespace StarWars
     {
         static void Main(string[] args)
         {
+            //윈도우창 크기 강제조절 찾아야함
             Console.OutputEncoding = Encoding.UTF8; // 특수문자 깨짐 해결
             Console.WriteLine("Star Wars Building");
 
@@ -18,9 +19,9 @@ namespace StarWars
             game.Start();
 
             //빌딩중           
-            Console.WriteLine();
-            Console.WriteLine("에러 없음");
-            Console.ReadLine();
+            //Console.WriteLine();
+            //Console.WriteLine("에러 없음");
+            //Console.ReadLine();
         }
     }
 }

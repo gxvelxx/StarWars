@@ -15,13 +15,12 @@ namespace StarWars
         private string[] _playerFrame;
         private MoveType _MoveType;
 
-
         //플레이어 크기
         private const int _playerFrameHeight = 4;
         private const int _playerFrameWidth = 6;
 
         //시작 위치
-        private static readonly Vector _initialPosition = new Vector(20, 20);
+        private static readonly Vector _initialPosition = new Vector(32, 26);
 
         public Player() : base(_initialPosition)
         {

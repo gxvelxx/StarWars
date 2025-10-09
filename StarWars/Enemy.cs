@@ -21,6 +21,9 @@ namespace StarWars
         //재생성을 위한 랜덤
         private static Random _rnd = new Random();
 
+        //적 이동속도
+        private double _moveSpeed;
+
         //적을 만들 생성자
         public Enemy() : base(new Vector(_rnd.Next(0, Console.WindowWidth - 5), 0))
         {
@@ -28,6 +31,18 @@ namespace StarWars
             {               
                 "┣╸⬤┫"
             };
+
+            //3종류의 속도
+            int speedLevel = _rnd.Next(1, 3);
+            switch (speedLevel)
+            {
+                case 1:
+                    _moveSpeed = 0.1;
+                    break;
+                case 2:
+                    _moveSpeed = 0.01;
+                    break;                
+            }
         }
 
         //충돌 크기 override
@@ -58,7 +73,7 @@ namespace StarWars
         //적 이동 함수
         public void MoveDown()
         {            
-            if ((DateTime.Now - _lastMoveTime).TotalSeconds >= 0.1)
+            if ((DateTime.Now - _lastMoveTime).TotalSeconds >= _moveSpeed)
             {
                 if (_vector.Y < Console.WindowHeight - 1)
                 {
@@ -67,7 +82,7 @@ namespace StarWars
                 else
                 {
                     _vector.Y = 0;
-                    _vector.X = _rnd.Next(0, Console.WindowWidth - 5);
+                    _vector.X = _rnd.Next(0, Console.WindowWidth - 5);                    
                 }
                 _lastMoveTime = DateTime.Now;
             }

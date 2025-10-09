@@ -25,7 +25,7 @@ namespace StarWars
         {
             gameover = false;
             player = new Player();
-            enemies = new Enemies(16, 0.5);
+            enemies = new Enemies(24, 0.2); //난이도 조절가능
             boss = new Boss();
 
             collisionManager = new CollisionManager(player.Weapon, enemies.EnemyList, boss);

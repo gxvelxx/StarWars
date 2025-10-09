@@ -91,20 +91,22 @@ namespace StarWars
             int posX = _vector.X;
             int posY = _vector.Y;
 
+            int moveSpeed = 2; //이동속도 조절
+
             // 방향에 따라 위치 계산
             switch (_MoveType)
             {
                 case MoveType.Left:
-                    posX--;
+                    posX -= moveSpeed;
                     break;
                 case MoveType.Right:
-                    posX++;
+                    posX += moveSpeed;
                     break;
                 case MoveType.Up:
-                    posY--;
+                    posY -= moveSpeed/2;
                     break;
                 case MoveType.Down:
-                    posY++;
+                    posY += moveSpeed/2;
                     break;
             }
 

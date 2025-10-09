@@ -16,7 +16,7 @@ namespace StarWars
         private const int _enemyFrameWidth = 4;
 
         //적을 소환할 위치
-        private static readonly Vector _generatePosition = new Vector(0, 0);
+        //private static readonly Vector _generatePosition = new Vector(0, 0);
 
         //적 이동에 필요한 시간
         private DateTime _lastMoveTime;
@@ -25,7 +25,7 @@ namespace StarWars
         private static Random _rnd = new Random();
 
         //적을 만들 생성자
-        public Enemy() : base(_generatePosition)
+        public Enemy() : base(new Vector(_rnd.Next(0, 33), 0))
         {
             _enemyFrame = new string[1]
             {               

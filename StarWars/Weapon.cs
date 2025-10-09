@@ -17,6 +17,12 @@ namespace StarWars
         private const double FireDelay = 0.2;
         private const int MaxBullets = 6;
 
+        //충돌검사용
+        public IEnumerable<Bullet> Bullets
+        {
+            get { return _bullets; }
+        }
+
         //플레이어가 쏠 때
         public void Shoot(Vector playerPosition)
         {

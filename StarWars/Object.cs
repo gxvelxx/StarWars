@@ -15,5 +15,17 @@ namespace StarWars
         {
             _vector = vector;
         }
-    }
+
+        //충돌감지를 위해
+        public int PositionX
+        { get { return _vector.X; } }
+        public int PositionY
+        { get { return _vector.Y; } }
+
+        //충돌감지용 높이와 너비
+        public virtual int Height
+        { get { return 1; } }
+        public virtual int Width
+        { get { return 1; } }
+    }    
 }

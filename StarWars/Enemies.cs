@@ -16,6 +16,12 @@ namespace StarWars
         private readonly int _maxEnemies;
         private readonly double _spawnInterval;
 
+        //충돌감지용
+        public List<Enemy> EnemyList
+        {
+            get { return _enemies; }
+        }
+
         //생성자에서 최대수,생성시간 관리
         public Enemies(int maxEnemies, double spawnInterval)
         {

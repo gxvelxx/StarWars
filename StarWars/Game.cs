@@ -18,12 +18,17 @@ namespace StarWars
         private Enemies enemies;
         private Boss boss;
 
+        //충돌감지
+        private CollisionManager collisionManager;
+
         public Game()
         {
             gameover = false;
             player = new Player();
             enemies = new Enemies(16, 0.5);
             boss = new Boss();
+
+            collisionManager = new CollisionManager(player.Weapon, enemies.EnemyList);
         }
 
         //게임 시작
@@ -35,10 +40,13 @@ namespace StarWars
             {               
                 player.ReadKey();
                 player.Move();
-                player.Weapon.Update();
 
                 enemies.UpdateSpawn();
                 enemies.MoveAll();
+
+                //충돌감지
+                player.Weapon.Update();
+                collisionManager.CheckAllColliding();
 
                 boss.Move();
 

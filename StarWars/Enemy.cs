@@ -13,10 +13,7 @@ namespace StarWars
         private string[] _enemyFrame;
         //적의 크기를 선언할 정수
         private const int _enemyFrameHeghit = 1;
-        private const int _enemyFrameWidth = 4;
-
-        //적을 소환할 위치
-        //private static readonly Vector _generatePosition = new Vector(0, 0);
+        private const int _enemyFrameWidth = 4;        
 
         //적 이동에 필요한 시간
         private DateTime _lastMoveTime;
@@ -32,6 +29,12 @@ namespace StarWars
                 "┣╸⬤┫"
             };
         }
+
+        //충돌 크기 override
+        public override int Height
+        { get { return _enemyFrameHeghit; } }
+        public override int Width
+        {  get { return _enemyFrameWidth; } }
 
         //적의 모양을 출력하는 함수
         public void Create()

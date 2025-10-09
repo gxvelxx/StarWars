@@ -13,6 +13,12 @@ namespace StarWars
         private const int _bulletSpeed = 1;
         private bool _isActive;
 
+        //충돌 크기 override
+        public override int Height
+        { get { return 1; } }
+        public override int Width
+        { get { return 1; } }
+
         //Weapon 사용
         public bool isActive
         {
@@ -54,6 +60,12 @@ namespace StarWars
             }
             Console.SetCursorPosition(_vector.X, _vector.Y);
             Console.Write(_bulletFrame);
+        }
+
+        //충돌시 비활성화
+        public void DeActive()
+        {
+            _isActive = false;
         }
     }
 }

@@ -8,21 +8,66 @@ namespace StarWars
 {
     internal class Weapon
     {
-        //움직이는 객체들한테서 나가야함
-        //플레이어 기준 키 입력 당시 좌표에서 생성되어야?
-        //유니티는 탈부착이였던거 같은데..
+        //총알을 담을 큐
+        //마지막 발사 시감
+        //총알 발사 간격
+        //총알 최대 수
+        private Queue<Bullet> _bullets = new Queue<Bullet>();
+        private DateTime _lastFireTime;
+        private const double FireDelay = 0.2;
+        private const int MaxBullets = 6;
 
-        //그 생성 좌표에서 Y축으로 계속 나아가며 랜더링
-        //윗벽 Y(0)에 닿으면 사라져야함
-            //2. 적이 맞아도 사라져야
+        //플레이어가 쏠 때
+        public void Shoot(Vector playerPosition)
+        {
+            //무기 딜레이
+            if ((DateTime.Now - _lastFireTime).TotalSeconds < FireDelay)
+            {
+                return;
+            }
+            //탄창
+            int activeCount = 0;
+            foreach (Bullet bullet in _bullets)
+            {
+                if (bullet.isActive)
+                {
+                    activeCount++;
+                }
+            }
+            if (activeCount >= MaxBullets)
+            {
+                return;
+            }
+            
+            _bullets.Enqueue(new Bullet(playerPosition));
+            _lastFireTime = DateTime.Now;
+        }
 
-        //플레이어 총알
-        //렉을 막기위해 리볼버마냥 탄찬제한이 있으면 좋을듯
-        //총알을 담은 리스트?
-        //큐에 담아 6개 제한걸고 생성된 총알이 소멸되면 다시 담는?
+        //총알 궤적
+        public void Update()
+        {
+            int count = _bullets.Count;
+            Queue<Bullet> temp = new Queue<Bullet>();
 
-        //적 총알      
-        //아래벽 닿으면 사라져야함 창크키 제한 필요
-            //2. 플레이어도
+            for (int i = 0; i < count; i++)
+            {
+                Bullet bullet = _bullets.Dequeue();
+                bullet.Move();
+
+                if (bullet.isActive)
+                {
+                    temp.Enqueue(bullet);
+                }
+            }
+            _bullets = temp;
+        }
+
+        public void Draw()
+        {
+            foreach (Bullet bullet in _bullets)
+            {
+                bullet.Create();
+            }
+        }
     }
 }

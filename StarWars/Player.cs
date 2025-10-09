@@ -15,6 +15,9 @@ namespace StarWars
         private string[] _playerFrame;
         private MoveType _MoveType;
 
+        private Weapon _weapon;
+        public Weapon Weapon { get { return _weapon; } }
+
         //플레이어 크기
         private const int _playerFrameHeight = 4;
         private const int _playerFrameWidth = 6;
@@ -32,6 +35,7 @@ namespace StarWars
                 "▝.██.▘"
             };
             _MoveType = MoveType.None;
+            _weapon = new Weapon();
         }
         
         public void Create()
@@ -75,7 +79,10 @@ namespace StarWars
                     break;
                 case ConsoleKey.S:
                     _MoveType = MoveType.Down;
-                    break;                
+                    break;
+                case ConsoleKey.Spacebar:
+                    _weapon.Shoot(_vector);
+                    break;
             }
         }
 

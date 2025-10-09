@@ -12,7 +12,7 @@ namespace StarWars
         private bool gameover;
 
         //플레이어
-        private Player player;
+        private Player player;        
 
         //적
         private Enemies enemies;
@@ -35,6 +35,7 @@ namespace StarWars
             {               
                 player.ReadKey();
                 player.Move();
+                player.Weapon.Update();
 
                 enemies.UpdateSpawn();
                 enemies.MoveAll();
@@ -43,6 +44,7 @@ namespace StarWars
 
                 Console.Clear(); // 리랜더링 보이는게 거슬림
                 player.Create();
+                player.Weapon.Draw();
                 enemies.CreateAll();
                 boss.Create();
 

@@ -18,9 +18,12 @@ namespace StarWars
             Console.SetWindowSize(width, height);
             Console.SetBufferSize(width, height);
            
-            Console.Clear();            
-
+            //시작 화면
+            StartScreen startScreen = new StartScreen();
+            startScreen.Show();
+            
             //게임 시작
+            Console.Clear();          
             Game game = new Game();
             game.Start();
         }

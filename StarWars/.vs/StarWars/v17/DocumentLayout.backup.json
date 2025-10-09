@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\\uD0DC\uC591\\Documents\\GitHub\\StarWars\\StarWars\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CC60B24C-E02E-40D7-BADF-34A4151C9628}|StarWars.csproj|C:\\Users\\\uD0DC\uC591\\Documents\\GitHub\\StarWars\\StarWars\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{CC60B24C-E02E-40D7-BADF-34A4151C9628}|StarWars.csproj|c:\\users\\\uD0DC\uC591\\documents\\github\\starwars\\starwars\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CC60B24C-E02E-40D7-BADF-34A4151C9628}|StarWars.csproj|solutionrelative:game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CC60B24C-E02E-40D7-BADF-34A4151C9628}|StarWars.csproj|c:\\users\\\uD0DC\uC591\\documents\\github\\starwars\\starwars\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{CC60B24C-E02E-40D7-BADF-34A4151C9628}|StarWars.csproj|C:\\Users\\\uD0DC\uC591\\Documents\\GitHub\\StarWars\\StarWars\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CC60B24C-E02E-40D7-BADF-34A4151C9628}|StarWars.csproj|solutionrelative:enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC60B24C-E02E-40D7-BADF-34A4151C9628}|StarWars.csproj|c:\\users\\\uD0DC\uC591\\documents\\github\\starwars\\starwars\\enemies.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC60B24C-E02E-40D7-BADF-34A4151C9628}|StarWars.csproj|solutionrelative:enemies.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CC60B24C-E02E-40D7-BADF-34A4151C9628}|StarWars.csproj|C:\\Users\\\uD0DC\uC591\\Documents\\GitHub\\StarWars\\StarWars\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -34,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 222,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -43,6 +47,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "Enemies.cs",
+              "DocumentMoniker": "C:\\Users\\\uD0DC\uC591\\Documents\\GitHub\\StarWars\\StarWars\\Enemies.cs",
+              "RelativeDocumentMoniker": "Enemies.cs",
+              "ToolTip": "C:\\Users\\\uD0DC\uC591\\Documents\\GitHub\\StarWars\\StarWars\\Enemies.cs",
+              "RelativeToolTip": "Enemies.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAkwBAAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-09T03:07:02.623Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\\uD0DC\uC591\\Documents\\GitHub\\StarWars\\StarWars\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -50,12 +67,11 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-01T02:49:03.807Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-01T02:49:03.807Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Weapon.cs",
               "DocumentMoniker": "C:\\Users\\\uD0DC\uC591\\Documents\\GitHub\\StarWars\\StarWars\\Weapon.cs",
               "RelativeDocumentMoniker": "Weapon.cs",
@@ -67,7 +83,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Object.cs",
               "DocumentMoniker": "C:\\Users\\\uD0DC\uC591\\Documents\\GitHub\\StarWars\\StarWars\\Object.cs",
               "RelativeDocumentMoniker": "Object.cs",
@@ -79,7 +95,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Vector.cs",
               "DocumentMoniker": "C:\\Users\\\uD0DC\uC591\\Documents\\GitHub\\StarWars\\StarWars\\Vector.cs",
               "RelativeDocumentMoniker": "Vector.cs",
@@ -95,9 +111,9 @@
               "Title": "Game.cs",
               "DocumentMoniker": "C:\\Users\\\uD0DC\uC591\\Documents\\GitHub\\StarWars\\StarWars\\Game.cs",
               "RelativeDocumentMoniker": "Game.cs",
-              "ToolTip": "C:\\Users\\\uD0DC\uC591\\Documents\\GitHub\\StarWars\\StarWars\\Game.cs*",
-              "RelativeToolTip": "Game.cs*",
-              "ViewState": "AgIAACIAAAAAAAAAAAAuwC4AAABHAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\\uD0DC\uC591\\Documents\\GitHub\\StarWars\\StarWars\\Game.cs",
+              "RelativeToolTip": "Game.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAkwCkAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-02T07:15:21.42Z",
               "EditorCaption": ""
@@ -110,7 +126,7 @@
               "RelativeDocumentMoniker": "Enemy.cs",
               "ToolTip": "C:\\Users\\\uD0DC\uC591\\Documents\\GitHub\\StarWars\\StarWars\\Enemy.cs",
               "RelativeToolTip": "Enemy.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-08T12:14:21.336Z",
               "EditorCaption": ""

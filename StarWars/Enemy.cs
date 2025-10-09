@@ -34,7 +34,7 @@ namespace StarWars
         public override int Height
         { get { return _enemyFrameHeghit; } }
         public override int Width
-        {  get { return _enemyFrameWidth; } }
+        { get { return _enemyFrameWidth; } }
 
         //적의 모양을 출력하는 함수
         public void Create()

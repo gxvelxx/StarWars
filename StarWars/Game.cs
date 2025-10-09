@@ -28,7 +28,7 @@ namespace StarWars
             enemies = new Enemies(16, 0.5);
             boss = new Boss();
 
-            collisionManager = new CollisionManager(player.Weapon, enemies.EnemyList);
+            collisionManager = new CollisionManager(player.Weapon, enemies.EnemyList, boss);
         }
 
         //게임 시작

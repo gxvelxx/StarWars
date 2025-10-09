@@ -11,11 +11,13 @@ namespace StarWars
         //충돌 검사를 해야할 것들
         private Weapon _weapon;
         private List<Enemy> _targetEnemies;
+        private Boss _boss;
 
-        public CollisionManager(Weapon weapon, List<Enemy> targetEnemies)
+        public CollisionManager(Weapon weapon, List<Enemy> targetEnemies, Boss boss)
         {
             _weapon = weapon;
-            _targetEnemies = targetEnemies;            
+            _targetEnemies = targetEnemies;
+            _boss = boss;
         }
 
         //AABB 충돌검사 함수
@@ -32,7 +34,7 @@ namespace StarWars
             int w2 = obj2.Width;
 
             bool xOverlap = (x1 < x2 + w2) && (x1 + w1 > x2);
-            bool yOverlap = (y1 < y2 + h2) && (y1 + h1 > y2);
+            bool yOverlap = (y1 <= y2 + h2) && (y1 + h1 >= y2);
 
             return xOverlap && yOverlap;
         }
@@ -40,8 +42,10 @@ namespace StarWars
         public void CheckAllColliding()
         {
             CheckBulletEnemyCollisions();
+            CheckBulletBossCollision();
         }
 
+        //총알, 적
         private void CheckBulletEnemyCollisions()
         {
             //제거목록         
@@ -67,6 +71,27 @@ namespace StarWars
             foreach (Enemy enemy in enemiesToRemove)
             {
                 _targetEnemies.Remove(enemy);
+            }
+        }
+
+        //총알, 보스
+        private void CheckBulletBossCollision()
+        {
+            if (_boss == null || !_boss.IsAlive)
+            {
+                return;
+            }
+            foreach (Bullet bullet in _weapon.Bullets)
+            {
+                if (!bullet.isActive)
+                {
+                    continue;
+                }
+                if (IsColliding(bullet, _boss))
+                {
+                    bullet.DeActive();
+                    _boss.TakeDamage(2);
+                }
             }
         }
     }

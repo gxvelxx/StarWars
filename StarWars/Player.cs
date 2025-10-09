@@ -23,7 +23,7 @@ namespace StarWars
         private const int _playerFrameWidth = 6;
 
         //시작 위치
-        private static readonly Vector _initialPosition = new Vector((Console.WindowWidth / 2) - 3, 26);
+        private static readonly Vector _initialPosition = new Vector((Console.WindowWidth / 2) - 3, Console.WindowHeight - 8);
 
         public Player() : base(_initialPosition)
         {

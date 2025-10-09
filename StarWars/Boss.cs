@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,10 +16,22 @@ namespace StarWars
         private int _bossFrameWidth = 38;
         private DateTime _lastMoveTime;
 
+        //충돌크기 override
+        public override int Height
+        { get { return _bossFrameHeight; } }
+        public override int Width
+        {  get { return _bossFrameWidth; } }
+
+        //랜덤 이동
         private int _directionX = 1; 
         private int _directionY = 1;
         private Random _rnd = new Random();
 
+        //보스 HP
+        private bool _isAlive = true;
+        private int _hp = 30;
+        public bool IsAlive
+        { get { return _isAlive; } }
 
         public Boss() : base(new Vector((Console.WindowWidth / 2) - 19, 2))
         {
@@ -44,8 +58,28 @@ namespace StarWars
             };
         }
 
+        //데미지 처리
+        public void TakeDamage (int damage)
+        {
+            if (!_isAlive)
+            {
+                return;
+            }
+
+            _hp -= damage;
+            if (_hp <= 0)
+            {
+                _hp = 0;
+                _isAlive = false;
+            }
+        }
+
         public void Create()
         {
+            if (!_isAlive)
+            {
+                return;
+            }
             for (int i = 0; i < _bossFrameHeight; i++)
             {
                 string line = _bossFrame[i];

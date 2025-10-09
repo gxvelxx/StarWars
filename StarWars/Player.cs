@@ -18,9 +18,22 @@ namespace StarWars
         private Weapon _weapon;
         public Weapon Weapon { get { return _weapon; } }
 
+        //플레이어 목숨
+        private int _life = 3;
+        public int life
+        { get { return _life; } }
+        public bool IsAlive
+        { get { return _life > 0; } }
+
         //플레이어 크기
         private const int _playerFrameHeight = 4;
         private const int _playerFrameWidth = 6;
+
+        //충돌 크기 override
+        public override int Height
+        { get { return _playerFrameHeight; } }
+        public override int Width
+        { get { return _playerFrameWidth; } }
 
         //시작 위치
         private static readonly Vector _initialPosition = new Vector((Console.WindowWidth / 2) - 3, Console.WindowHeight - 8);
@@ -55,6 +68,15 @@ namespace StarWars
                     Console.Write(empty);
                 }
             }
+
+            //목숨 표시
+            Console.SetCursorPosition(2, Console.WindowHeight - 2);
+
+            Console.Write("Life: ");
+            Console.ForegroundColor = ConsoleColor.Red;
+            string hearts = new string('♥', _life);
+            Console.Write($"{hearts}");
+            Console.ResetColor();
         }
 
         public void ReadKey()
@@ -103,10 +125,10 @@ namespace StarWars
                     posX += moveSpeed;
                     break;
                 case MoveType.Up:
-                    posY -= moveSpeed/2;
+                    posY -= moveSpeed / 2;
                     break;
                 case MoveType.Down:
-                    posY += moveSpeed/2;
+                    posY += moveSpeed / 2;
                     break;
             }
 
@@ -119,6 +141,19 @@ namespace StarWars
             // 범위 안이면 위치 이동
             _vector.X = posX;
             _vector.Y = posY;
+        }
+
+        //충돌시
+        public void TakeDamage()
+        {
+            if (_life > 0)
+            {
+                _life--;
+            }
+            if (_life <= 0)
+            {
+                _life = 0;
+            }
         }
     }
 }

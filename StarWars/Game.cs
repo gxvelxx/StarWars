@@ -19,7 +19,7 @@ namespace StarWars
         private Boss boss;
 
         //충돌감지
-        private CollisionManager collisionManager;
+        private CollisionManager collisionManager; //플레이어나 보스 여백 충돌 해결해야함
 
         public Game()
         {
@@ -28,7 +28,7 @@ namespace StarWars
             enemies = new Enemies(24, 0.2); //난이도 조절가능
             boss = new Boss();
 
-            collisionManager = new CollisionManager(player.Weapon, enemies.EnemyList, boss);
+            collisionManager = new CollisionManager(player.Weapon, enemies.EnemyList, boss, player);
         }
 
         //게임 시작

@@ -12,12 +12,14 @@ namespace StarWars
         private Weapon _weapon;
         private List<Enemy> _targetEnemies;
         private Boss _boss;
+        private Player _player;
 
-        public CollisionManager(Weapon weapon, List<Enemy> targetEnemies, Boss boss)
+        public CollisionManager(Weapon weapon, List<Enemy> targetEnemies, Boss boss, Player player)
         {
             _weapon = weapon;
             _targetEnemies = targetEnemies;
             _boss = boss;
+            _player = player;
         }
 
         //AABB 충돌검사 함수
@@ -43,6 +45,7 @@ namespace StarWars
         {
             CheckBulletEnemyCollisions();
             CheckBulletBossCollision();
+            CheckPlayerEnemyCollision();
         }
 
         //총알, 적
@@ -93,6 +96,25 @@ namespace StarWars
                     _boss.TakeDamage(2);
                 }
             }
+        }
+
+        //플레이어, 적
+        private void CheckPlayerEnemyCollision()
+        {
+            if (_player == null || !_player.IsAlive)
+            {
+                return;
+            }
+           
+            foreach (Enemy enemy in _targetEnemies)
+            {
+                if (IsColliding(_player, enemy))
+                {
+                    _player.TakeDamage();
+                    _targetEnemies.Remove(enemy);
+                    break;
+                }
+            }            
         }
     }
 }

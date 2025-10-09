@@ -8,7 +8,7 @@ namespace StarWars
 {
     public enum MoveType
     {
-        Left, Right, Up, Down
+        None, Left, Right, Up, Down
     }
     internal class Player : Object
     {
@@ -20,7 +20,7 @@ namespace StarWars
         private const int _playerFrameWidth = 6;
 
         //시작 위치
-        private static readonly Vector _initialPosition = new Vector(32, 26);
+        private static readonly Vector _initialPosition = new Vector((Console.WindowWidth / 2) - 3, 26);
 
         public Player() : base(_initialPosition)
         {
@@ -30,7 +30,8 @@ namespace StarWars
                 " ▟▌▐▙ ",
                 "██  ██ ",
                 "▝.██.▘"
-            };            
+            };
+            _MoveType = MoveType.None;
         }
         
         public void Create()

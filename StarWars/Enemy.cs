@@ -25,7 +25,7 @@ namespace StarWars
         private static Random _rnd = new Random();
 
         //적을 만들 생성자
-        public Enemy() : base(new Vector(_rnd.Next(0, 33), 0))
+        public Enemy() : base(new Vector(_rnd.Next(0, Console.WindowWidth - 5), 0))
         {
             _enemyFrame = new string[1]
             {               
@@ -52,19 +52,19 @@ namespace StarWars
             }
         }
 
-        //적 이동 함수 (y좌표 29까지 아래로)
+        //적 이동 함수
         public void MoveDown()
         {            
             if ((DateTime.Now - _lastMoveTime).TotalSeconds >= 0.1)
             {
-                if (_vector.Y < 29)
+                if (_vector.Y < Console.WindowHeight - 1)
                 {
                     _vector.Y++;
                 }
                 else
                 {
                     _vector.Y = 0;
-                    _vector.X = _rnd.Next(0, 33);
+                    _vector.X = _rnd.Next(0, Console.WindowWidth - 5);
                 }
                 _lastMoveTime = DateTime.Now;
             }

@@ -15,13 +15,15 @@ namespace StarWars
         private Player player;
 
         //적
-        private Enemies enemies;                 
+        private Enemies enemies;
+        private Boss boss;
 
         public Game()
         {
             gameover = false;
             player = new Player();
             enemies = new Enemies(16, 0.5);
+            boss = new Boss();
         }
 
         //게임 시작
@@ -37,9 +39,12 @@ namespace StarWars
                 enemies.UpdateSpawn();
                 enemies.MoveAll();
 
+                boss.Move();
+
                 Console.Clear(); // 리랜더링 보이는게 거슬림
                 player.Create();
                 enemies.CreateAll();
+                boss.Create();
 
                 Thread.Sleep(30);
             }

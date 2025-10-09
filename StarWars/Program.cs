@@ -17,15 +17,38 @@ namespace StarWars
             int width = 80;
             Console.SetWindowSize(width, height);
             Console.SetBufferSize(width, height);
-           
-            //시작 화면
-            StartScreen startScreen = new StartScreen();
-            startScreen.Show();
-            
-            //게임 시작
-            Console.Clear();          
-            Game game = new Game();
-            game.Start();
+
+            //메인 루프관리
+            bool exit = false;
+
+            while (!exit)
+            {
+                //시작 화면
+                StartScreen startScreen = new StartScreen();
+                startScreen.Show();
+
+                Console.Clear();
+
+                //게임 실행
+                Game game = new Game();
+                game.Start();
+
+                Console.Clear();
+
+                //게임오버 화면
+                GameOverScreen gameOverScreen = new GameOverScreen();
+                gameOverScreen.Show();
+
+                if (gameOverScreen.IsRestartInput)
+                {
+                    Console.Clear();
+                    continue;
+                }
+                else
+                {
+                    exit = true;
+                }
+            }
         }
     }
 }

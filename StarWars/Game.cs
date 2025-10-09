@@ -23,6 +23,12 @@ namespace StarWars
 
         public Game()
         {
+            Initialize();
+        }
+
+        //게임 설정
+        private void Initialize()
+        {
             gameover = false;
             player = new Player();
             enemies = new Enemies(24, 0.2); //난이도 조절가능
@@ -37,7 +43,7 @@ namespace StarWars
             Console.CursorVisible = false;
 
             while (!gameover)
-            {               
+            {
                 player.ReadKey();
                 player.Move();
 
@@ -47,11 +53,21 @@ namespace StarWars
                 //충돌감지
                 player.Weapon.Update();
                 collisionManager.CheckAllColliding();
-
                 boss.Move();
 
-                Console.Clear(); // 리랜더링 보이는게 거슬림
-                player.Create();
+                Console.Clear();
+
+                //플레이어 생존 확인
+                if (player.IsAlive)
+                {
+                    player.Create();
+                }
+                else
+                {
+                    gameover = true;
+                    break;
+                }
+
                 player.Weapon.Draw();
                 enemies.CreateAll();
                 boss.Create();

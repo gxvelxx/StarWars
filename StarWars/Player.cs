@@ -19,9 +19,7 @@ namespace StarWars
         public Weapon Weapon { get { return _weapon; } }
 
         //플레이어 목숨
-        private int _life = 3;
-        public int life
-        { get { return _life; } }
+        private int _life = 3;        
         public bool IsAlive
         { get { return _life > 0; } }
 

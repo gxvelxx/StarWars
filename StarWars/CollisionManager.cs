@@ -56,7 +56,7 @@ namespace StarWars
 
             foreach (Bullet bullet in _weapon.Bullets) //항상 최신 Queue 정보사용해야 충돌이 감지됨
             {
-                if (!bullet.isActive)
+                if (!bullet.IsActive)
                 {
                     continue;
                 }
@@ -86,7 +86,7 @@ namespace StarWars
             }
             foreach (Bullet bullet in _weapon.Bullets)
             {
-                if (!bullet.isActive)
+                if (!bullet.IsActive)
                 {
                     continue;
                 }

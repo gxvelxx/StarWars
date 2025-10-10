@@ -31,23 +31,46 @@ namespace StarWars
 
                 //게임 실행
                 Game game = new Game();
-                game.Start();
+                GameResult result = game.Start(); //게임 상황 확인
 
                 Console.Clear();
-
-                //게임오버 화면
-                GameOverScreen gameOverScreen = new GameOverScreen();
-                gameOverScreen.Show();
-
-                if (gameOverScreen.IsRestartInput)
+                
+                //상황에 따라
+                if (result == GameResult.PlayerDied)
                 {
-                    Console.Clear();
-                    continue;
+                    //게임 종료시
+                    GameOverScreen gameOver = new GameOverScreen();
+                    gameOver.Show();
+
+                    if (!gameOver.IsRestartInput)
+                    {
+                        exit = true;
+                    }
                 }
-                else
+                //else if (result == GameResult.BossDefeated)
+                //{
+                //    //보스 처치시
+                //    GameWInScreen gameWin = new GameWInScreen();
+                //    gameWin.Show();
+                //}
+                else if (result == GameResult.BossDefeated_PlayerDied)
                 {
-                    exit = true;
+                    //보스 처치후 게임 종료시
+                    GameWInScreen gamefinish = new GameWInScreen();
+                    gamefinish.Show(final: true);
+
+                    if (gamefinish.IsRestartInput)
+                    {
+                        Console.Clear();
+                        continue;
+                    }
+                    else
+                    {
+                        exit = true;
+                    }
                 }
+
+                Console.Clear();
             }
         }
     }

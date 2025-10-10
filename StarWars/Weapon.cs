@@ -35,7 +35,7 @@ namespace StarWars
             int activeCount = 0;
             foreach (Bullet bullet in _bullets)
             {
-                if (bullet.isActive)
+                if (bullet.IsActive)
                 {
                     activeCount++;
                 }
@@ -60,7 +60,7 @@ namespace StarWars
                 Bullet bullet = _bullets.Dequeue();
                 bullet.Move();
 
-                if (bullet.isActive)
+                if (bullet.IsActive)
                 {
                     temp.Enqueue(bullet);
                 }

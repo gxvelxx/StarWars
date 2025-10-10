@@ -20,7 +20,7 @@ namespace StarWars
         { get { return 1; } }
 
         //Weapon 사용
-        public bool isActive
+        public bool IsActive
         {
             get { return _isActive; }
         }

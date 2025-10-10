@@ -21,7 +21,7 @@ namespace StarWars
             int centerX = Console.WindowWidth / 2;
 
             string gameOverText = "GAME OVER";
-            string restartText = "[R] 다시 시작 | [Enter] 종료";
+            string restartText = "[R] 다시 시작 | [Enter] 게임 종료";
 
             Console.SetCursorPosition(centerX - gameOverText.Length / 2, centerY - 1);
             Console.WriteLine(gameOverText);

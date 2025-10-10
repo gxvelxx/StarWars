@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace StarWars
 {    
+    public enum GameResult
+    {
+        PlayerDied, BossDefeated, BossDefeated_PlayerDied
+    }
     internal class Game
     {
         private bool gameover;
@@ -38,11 +42,13 @@ namespace StarWars
         }
 
         //게임 시작
-        public void Start()
+        public GameResult Start()
         {
             Console.CursorVisible = false;
+            bool bossDefeated = false;
 
-            while (!gameover)
+            //기능 추가될 때마다 순서를 매번 수정하고 신경써야해서 가장 지옥같은 구간
+            while (true)
             {
                 player.ReadKey();
                 player.Move();
@@ -57,20 +63,36 @@ namespace StarWars
 
                 Console.Clear();
 
-                //플레이어 생존 확인
-                if (player.IsAlive)
+                //보스 생존 확인
+                if (!bossDefeated && !boss.IsAlive)
                 {
-                    player.Create();
-                }
-                else
-                {
-                    gameover = true;
-                    break;
+                    bossDefeated = true;
+                    GameWInScreen gameWin = new GameWInScreen(); //화면관리는 Program에서만 관리하고 싶은데
+                    gameWin.Show(); //보스 처치시 문구만 출력 후 게임을 계속 진행하려니
+                                    //여기서 작성해야 흐름이 이어짐, 옮길 방법을 생각해봐야함
                 }
 
+                //플레이어 생존 확인
+                if (!player.IsAlive)
+                {
+                    if (bossDefeated)
+                    {
+                        return GameResult.BossDefeated_PlayerDied;
+                    }
+                    else
+                    {
+                        return GameResult.PlayerDied;
+                    }
+                }
+
+                player.Create();
                 player.Weapon.Draw();
                 enemies.CreateAll();
-                boss.Create();
+                
+                if (boss.IsAlive)
+                {
+                    boss.Create();
+                }                
 
                 Thread.Sleep(30);
             }

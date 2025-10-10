@@ -28,16 +28,16 @@ namespace StarWars
             int centerY = Console.WindowHeight / 2;
             int centerX = Console.WindowWidth / 2;
 
-            string bossDefeatedText = "보스를 처치했습니다!!!";
+            string bossDefeatedText = "데스스타를 처치했습니다!!!";
             string gameKeepPlayText = "이제 남은 적들을 처치하며 기록을 갱신해보세요!";
 
-            string gameWinText = "축하합니다!! 적들을 무찔렀습니다!!"; //처치 기록을 볼 수 있게 수정해야함
+            string gameWinText = "임무 성공!! 적들을 무찔렀습니다!!"; //처치 기록을 볼 수 있게 수정해야함
             string reStartText = "[R] 다시 시작 | [Enter] 게임 종료";
 
             if (!final)
             {
                 //보스 처치시
-                Console.SetCursorPosition(centerX - bossDefeatedText.Length / 2 - 3, centerY - 1);
+                Console.SetCursorPosition(centerX - bossDefeatedText.Length / 2 - 4, centerY - 1);
                 Console.WriteLine(bossDefeatedText);
                 Console.SetCursorPosition(centerX - gameKeepPlayText.Length / 2 - 8, centerY + 1);
                 Console.WriteLine(gameKeepPlayText);
